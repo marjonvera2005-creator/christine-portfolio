@@ -964,6 +964,10 @@ footer a:hover { color: var(--blue); }
   background: linear-gradient(90deg, #11294a 0%, #182340 55%, #2c2231 100%);
 }
 
+@media (max-width: 959px) {
+  [data-theme="dark"] .nav-links { background: var(--surface); }
+}
+
 [data-theme="dark"] .blob { opacity: 0.32; }
 [data-theme="dark"] .b3 { opacity: 0.18; }
 
@@ -1217,12 +1221,12 @@ body.page-leave footer { opacity: 0; }
   #navbar { gap: 2rem; padding: 0 6%; }
   .nav-logo { padding: 0; }
   .hero-sticker { right: -26px; }
-  .nav-links { display: flex; position: static; flex-direction: row; gap: 2.2rem; background: none; border-bottom: 0; }
+  .nav-links { display: flex; position: static; flex-direction: row; gap: clamp(1rem, 2.4vw, 2.2rem); background: none; border-bottom: 0; }
   .nav-links li { border-top: 0; }
   .nav-links a { display: inline; padding: 4px 0; }
   .nav-links a::after { display: block; }
   .nav-cta-mobile, .hamburger { display: none; }
-  .nav-cta { display: inline-flex; }
+  .nav-cta { display: inline-flex; flex-shrink: 0; white-space: nowrap; }
 
   .projects-grid, .cert-grid { grid-template-columns: repeat(3, 1fr); }
 
