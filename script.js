@@ -123,19 +123,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Tech stack marquee: repeat the icons so the short list fills the row and the loop is seamless
-const marqueeTrack = document.getElementById('marqueeTrack');
-const marqueeItems = [...marqueeTrack.children];
-for (let i = 0; i < 3; i++) {
-  marqueeItems.forEach(item => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    marqueeTrack.appendChild(clone);
-  });
-}
+// Sliding rows: repeat the items so each row is filled and the loop is seamless
+document.querySelectorAll('.marquee-track').forEach(track => {
+  const items = [...track.children];
+  const copies = Number(track.dataset.marqueeCopies) || 4;
+  for (let i = 1; i < copies; i++) {
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  }
+});
 
 // Page-style transition: fade out, jump to the section, then fade its content back in
-const ENTER_TARGETS = '.eyebrow, .hero-text, .hero-photo-wrap, .section-title, .section-sub, .about-photo-wrap, .about-text, .marquee, .services-grid > *, .projects-grid > *, .cert-grid > *, .beyond-gallery, .contact-box';
+const ENTER_TARGETS = '.eyebrow, .hero-text, .hero-photo-wrap, .section-title, .section-sub, .about-photo-wrap, .about-text, .marquee, .services-grid > *, .projects-grid > *, .cert-grid > *, .contact-box';
 
 // Let the CSS load-in animation finish before nav transitions take over the hero
 setTimeout(() => document.body.classList.add('loaded'), 1400);
@@ -288,7 +290,7 @@ function makeZoomable(img) {
   img.setAttribute('role', 'button');
 }
 
-document.querySelectorAll('[data-lightbox]').forEach(makeZoomable);
+document.querySelectorAll('[data-lightbox]:not([aria-hidden])').forEach(makeZoomable);
 
 document.addEventListener('keydown', e => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[data-lightbox], .md-main')) {

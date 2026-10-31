@@ -834,13 +834,15 @@ body.modal-open { overflow: hidden; }
 .beyond { background: var(--dots) 0 0 / 22px 22px, var(--bg); border-top: var(--line); }
 .beyond .eyebrow { background: var(--sun-soft); }
 
-.beyond-gallery { columns: 2; column-gap: 0.8rem; }
+/* Same sliding row as the tech stack, slower because the row is much longer */
+.photo-track { animation-duration: 80s; }
 
-.beyond-gallery img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 0.8rem;
-  break-inside: avoid;
+.photo-track img {
+  flex: none;
+  width: auto;
+  max-width: none;
+  height: 240px;
+  margin-right: 1rem;
   border: var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -848,7 +850,8 @@ body.modal-open { overflow: hidden; }
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.beyond-gallery img:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--edge); }
+.photo-track img:hover { transform: translateY(-6px) rotate(-2deg); box-shadow: 4px 8px 0 var(--edge); }
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
 
 /* CONTACT */
 .contact {
@@ -1161,7 +1164,7 @@ body.page-leave footer { opacity: 0; }
   .reveal, .drawer > * { opacity: 1; filter: none; transform: none; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .marquee-track { width: auto; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-  .marquee-track .tech { margin-right: 0; }
+  .marquee-track .tech, .photo-track img { margin-right: 0; }
   .marquee-track [aria-hidden="true"] { display: none; }
   html { scroll-behavior: auto; }
 }
@@ -1174,8 +1177,7 @@ body.page-leave footer { opacity: 0; }
   .hero-btns { flex-direction: row; gap: 2rem; }
   .tech { flex-basis: 120px; margin-right: 1.4rem; }
   .contact-box { padding: 3rem 2rem; }
-  .beyond-gallery { columns: 3; column-gap: 1.2rem; }
-  .beyond-gallery img { margin-bottom: 1.2rem; }
+  .photo-track img { height: 300px; margin-right: 1.4rem; }
 }
 
 /* Tablets */
@@ -1223,7 +1225,6 @@ body.page-leave footer { opacity: 0; }
   .nav-cta { display: inline-flex; }
 
   .projects-grid, .cert-grid { grid-template-columns: repeat(3, 1fr); }
-  .beyond-gallery { columns: 4; }
 
   .link-arrow, .contact-links a, footer li a, .drawer-info a { display: inline; padding: 0; }
   footer li { margin-bottom: 0.35rem; }
