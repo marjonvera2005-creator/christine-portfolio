@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christine Elaine Oliverio | Portfolio</title>
+  <meta name="description" content="Portfolio of Christine Elaine Oliverio — UI/UX designer, web developer and 4th-year Computer Science student."/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3Crect%20width='40'%20height='40'%20rx='10'%20fill='%2310233d'/%3E%3Cpath%20d='M27.8%2012.2a11%2011%200%201%200%200%2015.6'%20fill='none'%20stroke='%23ffd166'%20stroke-width='5'%20stroke-linecap='round'/%3E%3Ccircle%20cx='21'%20cy='20'%20r='3.5'%20fill='%23ffbf9b'/%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    // Apply the saved (or system) theme before the page paints, so it never flashes
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="navbar">
+    <a href="#home" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#10233d"/>
+        <path d="M27.8 12.2a11 11 0 1 0 0 15.6" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="21" cy="20" r="3.5" fill="#ffbf9b"/>
+      </svg>
+      <span>Christine</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li class="nav-cta-mobile"><a href="#contact" data-drawer-open>Contact Me</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode"><i class="fas fa-moon"></i></button>
+    <button type="button" class="btn btn-primary nav-cta" data-drawer-open>Contact Me</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-deco" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="spark s1">✦</span>
+        <span class="spark s2">✦</span>
+        <span class="spark s3">✦</span>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-hello">👋 Hello there!</p>
+          <h1 class="hero-name">Hi, I'm <span class="hl">Christine</span><br/>Elaine Oliverio</h1>
+          <p class="hero-role">Aspiring <span class="typed" id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+          <p class="hero-tagline">Designing with empathy, building with purpose.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="link-arrow">View my work <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="link-arrow muted" data-drawer-open>Let's talk <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="images/portrait-hero.jpg" alt="Christine Elaine Oliverio smiling in a black blazer" class="hero-photo"/>
+          <span class="hero-sticker" aria-hidden="true">Python · Web · UI/UX</span>
+          <span class="hero-badge"><i class="fas fa-graduation-cap"></i> BS Computer Science · 4th Year</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container">
+        <p class="eyebrow reveal">Get to know me</p>
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid">
+          <div class="about-photo-wrap reveal">
+            <img src="images/portrait-about.jpg" alt="Christine at the beach during sunset" class="about-photo"/>
+          </div>
+          <div class="about-text reveal">
+            <p>Hi! I'm <strong>Christine Elaine Oliverio</strong>, a fourth-year <strong>Bachelor of Computer Science</strong> student from Leyte. I love turning real-world problems into simple, helpful apps — from an offline assistive app for the visually impaired to a tourism site for Biliran.</p>
+            <p>I enjoy learning new technologies, sharpening my programming skills and designing interfaces that feel easy to use. I'm excited to grow as I prepare for my career in tech.</p>
+            <ul class="about-details">
+              <li><i class="fas fa-location-dot"></i> Cahigan, Villaba, Leyte</li>
+              <li><i class="fas fa-envelope"></i> christineelaineoliverio081@gmail.com</li>
+            </ul>
+            <div class="mini-cards">
+              <div class="mini-card"><h3>UI/UX Design</h3><p>Clean, accessible layouts and prototypes.</p></div>
+              <div class="mini-card"><h3>Problem Solver</h3><p>Ideas grounded in real community needs.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <p class="eyebrow reveal">What I work with</p>
+        <h2 class="section-title reveal">My Tech Stack</h2>
+        <p class="section-sub reveal">The languages I use to design, build and test websites and web apps.</p>
+        <div class="marquee reveal" role="group" aria-label="Tech stack">
+          <div class="marquee-track" id="marqueeTrack">
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt=""/><span>Java</span></div>
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt=""/><span>Python</span></div>
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt=""/><span>HTML</span></div>
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt=""/><span>CSS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services">
+      <div class="container">
+        <p class="eyebrow reveal">Services</p>
+        <h2 class="section-title reveal">What I Do</h2>
+        <p class="section-sub reveal">I build useful, user-friendly websites that pair thoughtful design with solid functionality.</p>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Development</h3>
+            <p>Responsive websites built with HTML and CSS, and web apps powered by Python.</p>
+          </div>
+          <div class="service-card reveal">
+            <i class="fas fa-pen-ruler"></i>
+            <h3>UI/UX Design</h3>
+            <p>Wireframes, prototypes and interfaces designed around real users.</p>
+          </div>
+          <div class="service-card reveal">
+            <i class="fas fa-bug"></i>
+            <h3>Software Testing</h3>
+            <p>Careful testing and debugging so apps behave the way they should.</p>
+          </div>
+          <div class="service-card reveal">
+            <i class="fas fa-file-lines"></i>
+            <h3>Documentation</h3>
+            <p>Clear reports and presentations with Word, Excel and PowerPoint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <p class="eyebrow reveal">Featured work</p>
+        <h2 class="section-title reveal">My Projects</h2>
+        <p class="section-sub reveal">Here are some of the projects I've worked on — from thesis research to web apps.</p>
+        <div class="projects-grid">
+
+          <article class="proj-card reveal">
+            <button class="proj-img phone" data-details="intelliguide" aria-label="View IntelliGuide details">
+              <img src="images/projects/intelliguide-camera.jpg" alt="IntelliGuide app detecting a motorcycle and a chair with distance labels"/>
+              <span class="proj-label">Thesis Project</span>
+            </button>
+            <div class="proj-body">
+              <h3>IntelliGuide</h3>
+              <p>An offline assistive mobile app that helps visually impaired users detect obstacles in real time.</p>
+              <div class="tags"><span>Flutter</span><span>TF Lite</span><span>YOLOv8</span><span>Offline</span></div>
+              <div class="proj-btns">
+                <button class="btn btn-primary" data-details="intelliguide">View Details <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <button class="proj-img" data-details="explorebil" aria-label="View ExploreBIL details">
+              <img src="images/projects/explorebil-welcome.png" alt="ExploreBIL home page"/>
+              <span class="proj-label">Web App</span>
+            </button>
+            <div class="proj-body">
+              <h3>ExploreBIL</h3>
+              <p>A tourism web app for Biliran to browse destinations, discover attractions and plan trips.</p>
+              <div class="tags"><span>Python</span><span>HTML</span><span>CSS</span><span>MySQL</span></div>
+              <div class="proj-btns">
+                <button class="btn btn-primary" data-details="explorebil">View Details <i class="fas fa-arrow-right"></i></button>
+                <a href="https://explorebil.onrender.com/home/" target="_blank" rel="noopener" class="btn btn-white"><i class="fas fa-arrow-up-right-from-square"></i> Live</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <button class="proj-img phone" data-details="letter" aria-label="View A Letter For You details">
+              <img src="images/projects/letter-envelope.jpg" alt="A Letter For You — closed envelope screen"/>
+              <span class="proj-label">Mini Project</span>
+            </button>
+            <div class="proj-body">
+              <h3>A Letter For You</h3>
+              <p>An interactive digital letter that opens with an envelope animation and plays music.</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <div class="proj-btns">
+                <button class="btn btn-primary" data-details="letter">View Details <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- PROJECT DETAILS (shown in the pop-up when "View Details" is clicked) -->
+        <template id="details-intelliguide">
+          <div class="md-gallery phone">
+            <img class="md-main" src="images/projects/intelliguide-camera.jpg" alt="IntelliGuide detecting a motorcycle at 2.4 m and a chair at 2.5 m"/>
+            <p class="md-caption"><strong>Camera:</strong> detects obstacles in real time and shows what each one is, how far away it is and which side it's on.</p>
+            <div class="md-thumbs">
+              <button class="md-thumb active" data-caption="<strong>Camera:</strong> detects obstacles in real time and shows what each one is, how far away it is and which side it's on."><img src="images/projects/intelliguide-camera.jpg" alt="IntelliGuide detecting a motorcycle at 2.4 m and a chair at 2.5 m"/></button>
+              <button class="md-thumb" data-caption="<strong>Navigation Map:</strong> shows saved places as pins on the map, with a quick button for each one. Personal locations are blurred in this screenshot."><img src="images/projects/intelliguide-map.jpg" alt="Navigation Map with quick buttons for saved places"/></button>
+              <button class="md-thumb" data-caption="<strong>Save Location:</strong> saves your current spot with an optional name and a category: Home, School, Work, Hospital or Custom."><img src="images/projects/intelliguide-save.jpg" alt="Save Location sheet with a name field and category buttons"/></button>
+              <button class="md-thumb" data-caption="<strong>Location History:</strong> lists the places you've arrived at, and stays on your phone only. Personal details are blurred in this screenshot."><img src="images/projects/intelliguide-history.jpg" alt="Location History showing an arrival at Home"/></button>
+              <button class="md-thumb" data-caption="<strong>Settings:</strong> choose voice guidance in English, Tagalog or Bisaya, and open your location history."><img src="images/projects/intelliguide-settings.jpg" alt="Settings with English, Tagalog and Bisaya voice options"/></button>
+            </div>
+          </div>
+          <div class="md-info">
+            <p class="md-type"><i class="fas fa-mobile-screen-button"></i> Mobile App · Thesis Project</p>
+            <h3 class="md-title">IntelliGuide</h3>
+            <p>IntelliGuide is an assistive mobile app that helps visually impaired users move around more safely. Using the phone's camera, it detects obstacles in real time with a YOLOv8 Nano model and a CNN+ViT classifier, then tells the user what is ahead, how far it is and which side it's on — through both voice and vibration.</p>
+            <p>Everything runs on the device, so it works fully offline, and the voice feedback is available in English, Tagalog and Bisaya.</p>
+            <h4>The Team</h4>
+            <ul class="proj-points">
+              <li><strong>Team Leader:</strong> Eliza Marie Rosario</li>
+              <li><strong>Assistant Team Leader:</strong> Christine Elaine Oliverio</li>
+              <li><strong>Developer:</strong> Marjon Vera</li>
+              <li><strong>Assistant Developer:</strong> Carl Marco Vaporoso</li>
+            </ul>
+            <h4>Key Features</h4>
+            <ul class="proj-points">
+              <li>Real-time detection of 19 trained obstacle classes</li>
+              <li>Distance estimation with a 3 m alert cutoff</li>
+              <li>Left / right position of each obstacle</li>
+              <li>Multimodal feedback: voice + vibration</li>
+              <li>Offline barangay (location) detection</li>
+              <li>Navigation map with saved places</li>
+              <li>Location history kept on the phone only</li>
+              <li>English, Tagalog and Bisaya support</li>
+            </ul>
+            <h4>Built With</h4>
+            <div class="tags"><span>Flutter</span><span>Dart</span><span>TensorFlow Lite</span><span>YOLOv8 Nano</span><span>CNN + ViT</span></div>
+          </div>
+        </template>
+
+        <template id="details-explorebil">
+          <div class="md-gallery">
+            <img class="md-main" src="images/projects/explorebil-welcome.png" alt="Explore Biliran welcome page with Login and Register buttons"/>
+            <p class="md-caption"><strong>Welcome Page:</strong> introduces Biliran Island and lets visitors log in or create an account.</p>
+            <div class="md-thumbs">
+              <button class="md-thumb active" data-caption="<strong>Welcome Page:</strong> introduces Biliran Island and lets visitors log in or create an account."><img src="images/projects/explorebil-welcome.png" alt="Explore Biliran welcome page with Login and Register buttons"/></button>
+              <button class="md-thumb" data-caption="<strong>Explore Municipalities:</strong> search for a municipality, read a short description and open its page."><img src="images/projects/explorebil-municipalities.png" alt="Search bar above a list of Biliran municipalities"/></button>
+              <button class="md-thumb" data-caption="<strong>Featured Tourist Spots:</strong> browse spots with photos, their municipality, star ratings and a Details button."><img src="images/projects/explorebil-spots.png" alt="Featured tourist spots with photos and star ratings"/></button>
+            </div>
+          </div>
+          <div class="md-info">
+            <p class="md-type"><i class="fas fa-globe"></i> Web App · Python</p>
+            <h3 class="md-title">ExploreBIL</h3>
+            <p>ExploreBIL is a tourist exploration web app for the province of Biliran. Visitors can browse destinations, discover local attractions and plan their trips — all in one place.</p>
+            <h4>Key Features</h4>
+            <ul class="proj-points">
+              <li>Browse tourist spots across Biliran</li>
+              <li>Detailed destination info and photos</li>
+              <li>Responsive design for phones, tablets and desktops</li>
+              <li>Python-powered backend with a MySQL database</li>
+            </ul>
+            <h4>Built With</h4>
+            <div class="tags"><span>Python</span><span>HTML</span><span>CSS</span><span>MySQL</span></div>
+            <div class="proj-btns">
+              <a href="https://explorebil.onrender.com/home/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-arrow-up-right-from-square"></i> View Live</a>
+              <a href="https://github.com/christineelaineoliverio081-web/EXPLOREBIL" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </template>
+
+        <template id="details-letter">
+          <div class="md-gallery phone">
+            <img class="md-main" src="images/projects/letter-envelope.jpg" alt="Closed envelope screen"/>
+          </div>
+          <div class="md-info">
+            <p class="md-type"><i class="fas fa-envelope-open-text"></i> Web Page · Mini Project</p>
+            <h3 class="md-title">A Letter For You</h3>
+            <p>A small interactive web page that turns a message into a digital letter. The visitor taps the envelope, it opens with an animation, and the letter slides out with a scrollable message and a music player.</p>
+            <h4>Key Features</h4>
+            <ul class="proj-points">
+              <li>Tap-to-open envelope animation</li>
+              <li>Scrollable letter card with custom typography</li>
+              <li>Embedded SoundCloud music player</li>
+              <li>Mobile-friendly layout</li>
+            </ul>
+            <h4>Built With</h4>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section certificates">
+      <div class="container">
+        <p class="eyebrow reveal">Achievements</p>
+        <h2 class="section-title reveal">Certificates</h2>
+        <p class="section-sub reveal">Seminars and courses that helped me grow. Click a certificate to view it larger.</p>
+        <div class="cert-grid">
+          <figure class="cert-card reveal">
+            <img src="images/certificates/ai-literacy.jpg" alt="Certificate of Completion — Introduction to AI Literacy and Responsible Use" data-lightbox/>
+            <figcaption><h3>Introduction to AI Literacy &amp; Responsible Use</h3><p>CHED · Mapúa University — Sept 2026</p></figcaption>
+          </figure>
+          <figure class="cert-card reveal">
+            <img src="images/certificates/thesis-preparation.jpg" alt="Certificate of Completion — Thesis Preparation with Trending Tools and Industry Practices" data-lightbox/>
+            <figcaption><h3>Thesis Preparation with Trending Tools &amp; Industry Practices</h3><p>Biliran Province State University — Oct 2025</p></figcaption>
+          </figure>
+          <figure class="cert-card reveal">
+            <img src="images/certificates/unplug-and-unwind.jpg" alt="Certificate of Participation — Unplug and Unwind seminar" data-lightbox/>
+            <figcaption><h3>Unplug &amp; Unwind: Redefining Digital Connection</h3><p>Biliran Province State University — Feb 2024</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <p class="eyebrow">Say hello</p>
+          <h2>Let's work together!</h2>
+          <p>Have a project, an internship opportunity or just want to say hi? My inbox is always open.</p>
+          <a href="mailto:christineelaineoliverio081@gmail.com" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send me an email</a>
+          <div class="contact-links">
+            <a href="https://www.facebook.com/christine.elaine.oliverio.2024" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://github.com/christineelaineoliverio081-web" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <span><i class="fas fa-location-dot"></i> Villaba, Leyte</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h2 class="footer-name">Christine Elaine Oliverio</h2>
+        <p>Aspiring UI/UX designer &amp; developer passionate about building helpful, user-friendly apps.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div class="footer-socials">
+          <a href="https://github.com/christineelaineoliverio081-web" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/christine.elaine.oliverio.2024" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:christineelaineoliverio081@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year">2026</span> Christine Elaine Oliverio. All rights reserved.</p>
+  </footer>
+
+  <!-- CONTACT DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+    <h3 id="drawerTitle">Get in Touch</h3>
+    <ul class="drawer-info">
+      <li><i class="fas fa-envelope"></i><a href="mailto:christineelaineoliverio081@gmail.com">christineelaineoliverio081@gmail.com</a></li>
+      <li><i class="fas fa-location-dot"></i><span>Villaba, Leyte, Philippines</span></li>
+    </ul>
+    <h4>Social Media</h4>
+    <div class="drawer-socials">
+      <a href="https://www.facebook.com/christine.elaine.oliverio.2024" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://github.com/christineelaineoliverio081-web" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:christineelaineoliverio081@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-modal-close aria-label="Close details"><i class="fas fa-xmark"></i></button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
