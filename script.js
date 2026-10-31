@@ -139,8 +139,14 @@ document.querySelectorAll('.marquee-track').forEach(track => {
 // Page-style transition: fade out, jump to the section, then fade its content back in
 const ENTER_TARGETS = '.eyebrow, .hero-text, .hero-photo-wrap, .section-title, .section-sub, .about-photo-wrap, .about-text, .marquee, .services-grid > *, .projects-grid > *, .cert-grid > *, .contact-box';
 
-// Let the CSS load-in animation finish before nav transitions take over the hero
-setTimeout(() => document.body.classList.add('loaded'), 1400);
+// Lift the loading screen once the page is ready, keeping it up long enough to read as intentional
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    root.classList.remove('is-loading');
+    // Let the CSS load-in animation finish before nav transitions take over the hero
+    setTimeout(() => document.body.classList.add('loaded'), 1400);
+  }, Math.max(0, 1600 - performance.now()));
+});
 
 function playEnter(section) {
   section.querySelectorAll(ENTER_TARGETS).forEach((el, i) => {

@@ -65,6 +65,38 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
 }
 
+/* LOADING SCREEN */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.is-loading #loader { opacity: 1; visibility: visible; pointer-events: auto; }
+.is-loading body { overflow: hidden; }
+
+/* Hold the hero's entrance until the loading screen lifts */
+.is-loading .hero-text,
+.is-loading .hero-photo-wrap { animation-play-state: paused !important; }
+
+.loader-ring, .loader-logo { grid-area: 1 / 1; }
+.loader-ring { width: 112px; height: 112px; animation: loaderSpin 1s linear infinite; }
+.loader-logo { width: 64px; height: 64px; border-radius: 16px; }
+.loader-ring circle { fill: none; stroke-width: 4; }
+.loader-track { stroke: var(--hairline); }
+.loader-arc { stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 28 72; }
+
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+
 /* NAV */
 #navbar {
   position: fixed;
