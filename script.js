@@ -135,7 +135,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 // Page-style transition: fade out, jump to the section, then fade its content back in
-const ENTER_TARGETS = '.eyebrow, .hero-text, .hero-photo-wrap, .section-title, .section-sub, .about-photo-wrap, .about-text, .marquee, .services-grid > *, .projects-grid > *, .cert-grid > *, .contact-box';
+const ENTER_TARGETS = '.eyebrow, .hero-text, .hero-photo-wrap, .section-title, .section-sub, .about-photo-wrap, .about-text, .marquee, .services-grid > *, .projects-grid > *, .cert-grid > *, .beyond-gallery, .contact-box';
 
 // Let the CSS load-in animation finish before nav transitions take over the hero
 setTimeout(() => document.body.classList.add('loaded'), 1400);

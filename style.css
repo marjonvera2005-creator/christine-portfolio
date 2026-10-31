@@ -830,6 +830,26 @@ body.modal-open { overflow: hidden; }
 .cert-card h3 { font-size: 1rem; color: var(--ink); line-height: 1.3; margin-bottom: 0.3rem; }
 .cert-card p { font-size: 0.82rem; color: var(--muted); }
 
+/* BEYOND THE CODE */
+.beyond { background: var(--dots) 0 0 / 22px 22px, var(--bg); border-top: var(--line); }
+.beyond .eyebrow { background: var(--sun-soft); }
+
+.beyond-gallery { columns: 2; column-gap: 0.8rem; }
+
+.beyond-gallery img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.8rem;
+  break-inside: avoid;
+  border: var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  cursor: zoom-in;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.beyond-gallery img:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--edge); }
+
 /* CONTACT */
 .contact {
   background: var(--dots) 0 0 / 22px 22px, var(--blue-soft);
@@ -1154,6 +1174,8 @@ body.page-leave footer { opacity: 0; }
   .hero-btns { flex-direction: row; gap: 2rem; }
   .tech { flex-basis: 120px; margin-right: 1.4rem; }
   .contact-box { padding: 3rem 2rem; }
+  .beyond-gallery { columns: 3; column-gap: 1.2rem; }
+  .beyond-gallery img { margin-bottom: 1.2rem; }
 }
 
 /* Tablets */
@@ -1201,6 +1223,7 @@ body.page-leave footer { opacity: 0; }
   .nav-cta { display: inline-flex; }
 
   .projects-grid, .cert-grid { grid-template-columns: repeat(3, 1fr); }
+  .beyond-gallery { columns: 4; }
 
   .link-arrow, .contact-links a, footer li a, .drawer-info a { display: inline; padding: 0; }
   footer li { margin-bottom: 0.35rem; }
