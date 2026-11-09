@@ -9,7 +9,7 @@ A responsive personal portfolio website for Christine Elaine Oliverio, a fourth-
 - **Home:** introduction and links to projects and contact
 - **About:** background, location and email
 - **Skills:** the languages Christine works with
-- **What I Do:** web development, UI/UX design, software testing and documentation
+- **What I Do:** web development, UI/UX design and documentation
 - **Projects:** IntelliGuide, ExploreBIL and A Letter For You, each with a details pop-up and screenshot gallery
 - **Certificates:** seminars and courses, viewable at full size
 - **Beyond the Code:** a sliding row of photos from life outside programming, viewable at full size

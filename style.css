@@ -1249,6 +1249,7 @@ body.page-leave footer { opacity: 0; }
 
 /* Desktops */
 @media (min-width: 960px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
   :root { --nav-h: 76px; }
   #navbar { gap: 2rem; padding: 0 6%; }
   .nav-logo { padding: 0; }
